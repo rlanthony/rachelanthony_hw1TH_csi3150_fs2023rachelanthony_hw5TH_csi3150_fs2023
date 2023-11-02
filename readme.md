@@ -38,48 +38,57 @@ Create an interactive quiz app that prompts users to answer a multiple-choice qu
 
 1. In the head section of your index.html file, link your CSS and JS files to your HTML document. Also, provide a link to a font source (if applicable).
 
-```
-    <!-- CSS FILE -->
-    <link rel="stylesheet" href="css/style.css">
+```html
+<!-- CSS FILE -->
+<link rel="stylesheet" href="css/style.css" />
 
-     <!-- Add questions list -->
-    <script src="js/questions.js" defer></script>
+<!-- Add questions list -->
+<script src="js/questions.js" defer></script>
 
-    <!-- Main logic of the app -->
-    <script src="js/quizApp.js" defer></script>
+<!-- Main logic of the app -->
+<script src="js/quizApp.js" defer></script>
 
-    <!-- This is my personal font awesome kit code. you will have to add your own after you register with email-->
-    <script src="https://kit.fontawesome.com/4a4f4b55b0.js" crossorigin="anonymous"></script>
+<!-- This is my personal font awesome kit code. you will have to add your own after you register with email -->
+<script
+  src="https://kit.fontawesome.com/4a4f4b55b0.js"
+  crossorigin="anonymous"
+></script>
 ```
 
 2. Now, create the elements for the body of the HTML document. Create a div that holds the start button for the quiz.
 
-```
- <div class="start_btn"><button>Start Quiz</button></div>
+```html
+<div class="start_btn"><button>Start Quiz</button></div>
 ```
 
 3. Next, create a div that holds all of the instructions, and wrap each of them in a div. Also, create the two buttons that will allow users to either continue to the quiz or return to the home page.
 
-```
-    <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
-        <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
-            <div class="info">5. You'll get points on the basis of your correct answers.</div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
-        </div>
+```html
+<div class="info_box">
+  <div class="info-title"><span>Some Rules of this Quiz</span></div>
+  <div class="info-list">
+    <div class="info">
+      1. You will have only <span>15 seconds</span> per each question.
     </div>
+    <div class="info">2. Once you select your answer, it can't be undone.</div>
+    <div class="info">3. You can't select any option once time goes off.</div>
+    <div class="info">
+      4. You can't exit from the Quiz while you're playing.
+    </div>
+    <div class="info">
+      5. You'll get points on the basis of your correct answers.
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="quit">Exit Quiz</button>
+    <button class="restart">Continue</button>
+  </div>
+</div>
 ```
 
 4. Create a div that will hold the quiz questions.
 
-```
+```html
 <div class="quiz_box"></div>
 ```
 
@@ -87,48 +96,48 @@ Create an interactive quiz app that prompts users to answer a multiple-choice qu
 
    1. In the header, make the title, divs for the timer, and a div for the time line.
 
-   ```
-       <header>
-           <div class="title">Demo Quiz App in JavaScript</div>
-           <div class="timer">
-               <div class="time_left_txt">Time Left</div>
-               <!-- The timer_sec div will be used in the quizApp.js file to overwrite to countdown -->
-               <div class="timer_sec">15</div>
-           </div>
-           <!-- the time_line div provides the container that will hold the dynamic progress bar -->
-           <div class="time_line"></div>
-       </header>
+   ```html
+   <header>
+     <div class="title">Demo Quiz App in JavaScript</div>
+     <div class="timer">
+       <div class="time_left_txt">Time Left</div>
+       <!-- The timer_sec div will be used in the quizApp.js file to overwrite to countdown -->
+       <div class="timer_sec">15</div>
+     </div>
+     <!-- the time_line div provides the container that will hold the dynamic progress bar -->
+     <div class="time_line"></div>
+   </header>
    ```
 
    2. In the section, the quiz question and answers will be held. Create two divs, one for the question and one for the answer options.
 
-   ```
-       <section>
-           <div class="que_text">
-               <!-- Insert questions from ./js/questions.js -->
-           </div>
-           <div class="option_list">
-                   <!-- Insert options to questions from ./js/questions.js -->
-           </div>
-       </section>
+   ```html
+   <section>
+     <div class="que_text">
+       <!-- Insert questions from ./js/questions.js -->
+     </div>
+     <div class="option_list">
+       <!-- Insert options to questions from ./js/questions.js -->
+     </div>
+   </section>
    ```
 
    3. In the footer, create a div that will hold the quiz progress and the button to move to the next question.
 
-   ```
-       <footer>
-           <div class="total_que">
-               <!-- insert Question Count Number dynamically from JavaScript App logic -->
-           </div>
-           <button class="next_btn">Next Que</button>
-       </footer>
+   ```html
+   <footer>
+     <div class="total_que">
+       <!-- insert Question Count Number dynamically from JavaScript App logic -->
+     </div>
+     <button class="next_btn">Next Que</button>
+   </footer>
    ```
 
    4. After inserting the header, section, and footer into the quiz_box div, ensure to close the div.
 
 6. Finally, create the div that will hold the results of the quiz that is displayed once all questions are answered. Within the div, include text that indicates the quiz is over, create a div that will act as a placeholder for the number of questions answered correctly, and make a div with buttons to replay the quiz or exit it.
 
-```
+```html
     div class="result_box">
         <div class="icon">
             <i class="fas fa-crown"></i>
@@ -156,7 +165,7 @@ This completes the HTML file.
 
 2. Remove any default browser styling in terms of padding and margins. Also, set the box-sizing property to border-box so that the border and padding is taken into account with sizing. Finally, apply the fonts for the entire document.
 
-```
+```scss
 * {
   margin: 0;
   padding: 0;
@@ -167,7 +176,7 @@ This completes the HTML file.
 
 3. Provide a background color for the entire body, which will be the entire screen background.
 
-```
+```scss
 body {
   background: #a020f0;
 }
@@ -175,7 +184,7 @@ body {
 
 4. In the next code section, style all body content if a user highlights it. In this case, the text will turn white and have a purple background.
 
-```
+```scss
 ::selection {
   color: #fff;
   background: #a020f0;
@@ -184,7 +193,7 @@ body {
 
 5. To get the main elements (start button, instructions container, quiz question container, and results container) on each of the pages centered, use the following specifications for the position, top, left, and transform property. Also, add a shadow to each of the elements so that they stand out on the page.
 
-```
+```scss
 .start_btn,
 .info_box,
 .quiz_box,
@@ -204,20 +213,20 @@ body {
    - Setting the pointer-events to auto makes the cursor act as if no pointer-event was specified and uses the default browser settings.
    - Setting the scale of the element to 1 will keep it the size that is specified in other areas of the CSS code and the transform centers the element on the page.
 
-   ```
-   .info_box.activeInfo,
-   .quiz_box.activeQuiz,
-   .result_box.activeResult {
-   opacity: 1;
-   z-index: 5;
-   pointer-events: auto;
-   transform: translate(-50%, -50%) scale(1);
-   }
-   ```
+```scss
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult {
+  opacity: 1;
+  z-index: 5;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+```
 
 7. To style the start button seen on the home page of the game, the following changes were made to change the colors, text sizes, curvature of the element container, and change the cursor to a pointer when a user hovers over the button.
 
-```
+```scss
 .start_btn button {
   font-size: 25px;
   font-weight: 500;
@@ -233,7 +242,7 @@ body {
 
 8. For the instructions, quiz, and results container, its size is set, in addition to the background color, curvature of the corners, and opacity. The opacity at 0 allows it to not be seen except for when it is the active box. A transition is also applied to smoothly move to the next page.
 
-```
+```scss
 .info_box {
   width: 540px;
   background: #fff;
@@ -242,10 +251,9 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
-
 }
 
-  .quiz_box {
+.quiz_box {
   width: 550px;
   background: #fff;
   border-radius: 5px;
@@ -267,16 +275,15 @@ body {
   transform: translate(-50%, -50%) scale(0.9);
   opacity: 0;
   pointer-events: none;
-  transition:        all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 ```
 
 9. Next, set the styling for the content of the instructions box using the following settings.
 
 For the title:
 
-```
+```scss
 .info_box .info-title {
   height: 60px;
   width: 100%;
@@ -292,7 +299,7 @@ For the title:
 
 For the ordered list:
 
-```
+```scss
 .info_box .info-list {
   padding: 15px 30px;
 }
@@ -305,7 +312,7 @@ For the ordered list:
 
 10. To specially format the time limit text, use this selector to reach that child element.
 
-```
+```scss
 .info_box .info-list .info span {
   font-weight: 600;
   color: #a020f0;
@@ -314,7 +321,7 @@ For the ordered list:
 
 11. To format the containers of the instructions buttons so that they are positioned to the right, a flex display coupled with a justification of flex-end. Additional styling is applied for visual clarity.
 
-```
+```scss
 .info_box .buttons {
   height: 60px;
   display: flex;
@@ -327,7 +334,7 @@ For the ordered list:
 
 12. To style the actual buttons, an additional selector is added to identify it and the following styles are applied. The transition property will ease into the change color effect when the buttons are hovered over.
 
-```
+```scss
 .info_box .buttons button {
   margin: 0 5px;
   height: 40px;
@@ -345,7 +352,7 @@ For the ordered list:
 
 13. For the header of the quiz questions container, these various styles are applied to define the size and shape of the container. The display, aligh-items, and justify-content properties equally space and center the immediate child elements of the quiz_box div. The z-index will overlay the header over the container.
 
-```
+```scss
 .quiz_box header {
   position: relative;
   z-index: 2;
@@ -362,7 +369,7 @@ For the ordered list:
 
 14. Now, in terms of the immediate children of the quiz-box class, these styling rules are applied to align and size them properly for the container.
 
-```
+```scss
 .quiz_box header .title {
   font-size: 20px;
   font-weight: 600;
@@ -413,7 +420,7 @@ For the ordered list:
 
 15. The section tag used to hold the quiz questions has the following background styling and padding. The question texts, and options are also fomatted to improve the design for clarity by specifying a size and spacing of the containers.
 
-```
+```scss
 section {
   padding: 25px 30px 20px 30px;
   background: #fff;
@@ -452,7 +459,7 @@ Note: the transition for the .option pertains to the following effects applied t
 
 16. Style the different effects of the quiz question answer choices based on whether the user hovers over it, if the user answers correctly, or if the user answers incorrectly.
 
-```
+```scss
 section .option_list .option:last-child {
   margin-bottom: 0px;
 }
@@ -482,7 +489,7 @@ section .option_list .option.disabled {
 
 17. As mentioned in the App Features, icons are also used to indicate the correct and incorrect answers. To style the different icons, these styling rules are applied to change the colors and sizes of them.
 
-```
+```scss
 section .option_list .option .icon {
   height: 26px;
   width: 26px;
@@ -509,7 +516,7 @@ section .option_list .option .icon {
 
 18. The footer is going to have a similar layout as the header with centered and equally spaced items horizontally. There are also special font decorations added to bold the quiz question numbers as indicated by the p tags.
 
-```
+```scss
 footer {
   height: 60px;
   padding: 0 30px;
@@ -536,7 +543,7 @@ footer .total_que span p:first-child {
 
 19. The footer has the button that allows the user to move to the next question, and its opacity will be set to 0 because it should not appear always, only after an answer has been selected or time runs out. The rest of the style properties are to make the button comply with the general styling of the quiz and be properly spaced and placed with the elements around it. It is also given an effect when its hovered over.
 
-```
+```scss
 footer button {
   height: 40px;
   padding: 0 13px;
@@ -569,7 +576,7 @@ footer button.show {
 
 20. For the results container, these colors, sizing, and spacing were applied so that the information is layed out vertically. The span tags and p tags are used to specially format the score outcome. The icon also is styled to fit the container.
 
-```
+```scss
 .result_box .icon {
   font-size: 100px;
   color: #a020f0;
@@ -592,12 +599,11 @@ footer button.show {
   padding: 0 4px;
   font-weight: 600;
 }
-
 ```
 
 21. The container for all the buttons is given a flex display to space them and similar styling to the buttons on the other pages are applied in terms of the buttons itself and the pseudo-class used for when different events happen such as hover or if it is the restart or quit button. Changes in colors are used to alert the users when buttons are hovered over.
 
-```
+```scss
 .result_box .buttons {
   display: flex;
   margin: 20px 0;
@@ -658,13 +664,13 @@ Note: The `numb` field acts as the ID for the question and the `options` array s
 
 ##### Step 1: Create the empty array
 
-```
+```javascript
 let questions = [];
 ```
 
 ##### Step 2: Add question objects to the array
 
-```
+```javascript
 let questions = [
   {
     numb: 1,
@@ -731,7 +737,7 @@ let questions = [
 
 Note: `querySelector()` accepts parameters as identified in CSS and will return the first instance of the element.
 
-```
+```javascript
 // get elememts from HTML document
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
@@ -748,7 +754,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
-/intialize quiz variables
+//intialize quiz variables
 let timeValue = 15;
 let que_count = 0;
 let que_numb = 1;
@@ -764,7 +770,7 @@ let widthValue = 0;
 
 Once `start_btn` is clicked, the `activeInfo` class will be added to the `info_box` element, and because of our CSS file, `info_box` will appear because its opacity changes from 0 to 1 once assigned the `activeInfo` class.
 
-```
+```javascript
 // if startQuiz button clicked
 start_btn.addEventListener("click", (e) => {
   info_box.classList.add("activeInfo"); //show info box
@@ -775,7 +781,7 @@ start_btn.addEventListener("click", (e) => {
 
 The `exit_btn` on the instructions page will remove the `activeInfo` class from the `info_box` which changes its opacity back to 0 so that it disappears and thus, the `start_btn` will appear again.
 
-```
+```javascript
 // if exitQuiz button clicked
 exit_btn.addEventListener("click", (e) => {
   info_box.classList.remove("activeInfo"); //hide info box
@@ -788,7 +794,7 @@ When clicked, `activeInfo` class will be removed from the `info_box` to hide it 
 
 Several methods will also be called to trigger events such as showing the first question, incrementing the question count, starting the timer, and starting the time line. These functions will be defined below.
 
-```
+```javascript
 // if continueQuiz button clicked
 continue_btn.addEventListener("click", (e) => {
   info_box.classList.remove("activeInfo"); //hide info box
@@ -804,7 +810,7 @@ continue_btn.addEventListener("click", (e) => {
 
 This button will move to the start of the quiz by redefining the quiz variables, showing `quiz_box`, and hiding `results_box`. It will also clear out the timer and restart it.
 
-```
+```javascript
 // if restartQuiz button clicked
 restart_quiz.addEventListener("click", (e) => {
   quiz_box.classList.add("activeQuiz"); //show quiz box
@@ -829,7 +835,7 @@ restart_quiz.addEventListener("click", (e) => {
 
 When the `quit_quiz` button is clicked, the current window is reloaded that takes the user back to the home page with the start quiz button and converts all variables back to their default values.
 
-```
+```javascript
 // if quitQuiz button clicked
 quit_quiz.addEventListener("click", (e) => {
   window.location.reload(); //reload the current window
@@ -840,36 +846,33 @@ quit_quiz.addEventListener("click", (e) => {
 
 First, you need to ensure that you are not at the last question in the `questions` array or else you will get an error. You can do this by using an if statement to see if the question count is less than the length of the array minus 1 since question count was orignally set to 0.
 
-```
+```javascript
 next_btn.addEventListener("click", (e) => {
-if (que_count < questions.length - 1) {
-
-} else {
-
-}
+  if (que_count < questions.length - 1) {
+  } else {
+  }
 });
 ```
 
 If it is not the last question, `que_count` and `que_numb` are incremented by one to pass into the `showQuestions()` and `queCounter()` functions to move to the next question.
 
-```
+```javascript
 next_btn.addEventListener("click", (e) => {
-if (que_count < questions.length - 1) {
+  if (que_count < questions.length - 1) {
     que_count++; //increment the que_count value
     que_numb++; //increment the que_numb value
     showQuetions(que_count); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
-} else {
-
-}
+  } else {
+  }
 });
 ```
 
 The `counter` and `counterLine` will be cleared so that the timer restarts once you move to the next question. The `timeText` content is changed back to "Time Left" in case the user ran out of time and it changed to "Time Off".
 
-```
+```javascript
 next_btn.addEventListener("click", (e) => {
-if (que_count < questions.length - 1) {
+  if (que_count < questions.length - 1) {
     que_count++; //increment the que_count value
     que_numb++; //increment the que_numb value
     showQuetions(que_count); //calling showQestions function
@@ -879,17 +882,16 @@ if (que_count < questions.length - 1) {
     startTimer(timeValue); //calling startTimer function
     startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the timeText to Time Left
-} else {
-
-}
+  } else {
+  }
 });
 ```
 
 The `next_btn` is now hidden until the user selects an answer or the time runs out.
 
-```
+```javascript
 next_btn.addEventListener("click", (e) => {
-if (que_count < questions.length - 1) {
+  if (que_count < questions.length - 1) {
     que_count++; //increment the que_count value
     que_numb++; //increment the que_numb value
     showQuetions(que_count); //calling showQestions function
@@ -900,15 +902,14 @@ if (que_count < questions.length - 1) {
     startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
-} else {
-
-}
+  } else {
+  }
 });
 ```
 
 If it is the last question in the `questions` array, the two counters are cleared and the `results_box` is shown by calling the `showResult()` function.
 
-```
+```javascript
 // if Next Question button is clicked
 next_btn.addEventListener("click", (e) => {
   //check if it does not exceed max questions
@@ -941,9 +942,9 @@ This function will grab the `que_text` placeholder created in the HTML DOM and c
 
 The specific question is accessed by passing the index of the element to be accessed in the array which is the `que_count` used in the button event listeners.
 
-<span> tags are used to ensure the text is written on one line.
+\<span> tags are used to ensure the text is written on one line.
 
-```
+```javascript
 function showQuetions(index) {
   const que_text = document.querySelector(".que_text");
 
@@ -955,13 +956,13 @@ function showQuetions(index) {
     questions[index].question +
     "</span>";
 
-    que_text.innerHTML = que_tag; //adding new (child) span tag inside que_tag
+  que_text.innerHTML = que_tag; //adding new (child) span tag inside que_tag
 }
 ```
 
 Next, the different multiple choice options are populated in a similar manner by passing the index of the element to be accessed in the array but also needs to access the inner `options` array. We will manually account for the 4 choices, but this code needs to be modified if the number of answer choices deviates from 4. This new variable is set to the `options_list` innerHTML.
 
-```
+```javascript
 function showQuetions(index) {
   //...above code
 
@@ -985,7 +986,7 @@ function showQuetions(index) {
 
 Lastly, to make all of the options clickable, the `onclick` attribute will be set for each of the options using a for loop.
 
-```
+```javascript
 function showQuetions(index) {
   //...above code
 
@@ -1000,7 +1001,7 @@ function showQuetions(index) {
 
 Putting all the code together for the showQuetion() function:
 
-```
+```javascript
 function showQuetions(index) {
   const que_text = document.querySelector(".que_text");
 
@@ -1041,13 +1042,14 @@ function showQuetions(index) {
 
 As stated in the app requirements, icons are used in addition to colors to identify the correct and incorrect answers. New div tags are created to embed them in the HTML DOM.
 
-```
+```javascript
 // create new div tags for right or wrong tick icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 ```
 
 As soon as a user selects an option, the counters are stopped and cleared. We will also grab the user's answer, the correct answer to the question, and all of the options provided for the questions.
+javascript
 
 ```
 function optionSelected(answer) {
@@ -1061,12 +1063,11 @@ function optionSelected(answer) {
 
 If the user correctly answers the question, their score increases, and the answer is decorated with a green color by adding the `correct` class and the correct icon.
 
-```
+```javascript
 function optionSelected(answer) {
-
   //..code above
 
- if (userAns == correcAns) {
+  if (userAns == correcAns) {
     userScore += 1; //update total score value increment by 1
     answer.classList.add("correct"); //add green color to correct selected option
     answer.insertAdjacentHTML("beforeend", tickIconTag); //add tick icon to correct selected option
@@ -1074,18 +1075,15 @@ function optionSelected(answer) {
     console.log("Your correct answers = " + userScore);
   } else {
   }
-};
+}
 ```
 
 If the user gets the question wrong, the appropriate styling is applied to the option selected by adding the `incorrect` class to the answer and the wrong answer icon. The correct answer is given the appropriate styling too by looping through all of the question answer options until it matches the answer and then applying the styling.
 
-```
+```javascript
 function optionSelected(answer) {
-
-
- if (userAns == correcAns) {
+  if (userAns == correcAns) {
     //..code above
-
   } else {
     answer.classList.add("incorrect"); //add red color to correct selected option
     answer.insertAdjacentHTML("beforeend", crossIconTag); //add cross icon to correct selected option
@@ -1100,12 +1098,12 @@ function optionSelected(answer) {
       }
     }
   }
-};
+}
 ```
 
 Also, once an option is selected, disable all the buttons so that they cannot select another one and display the `next_btn` by using the `show` class.
 
-```
+```javascript
 function optionSelected(answer) {
     /..code above
 
@@ -1118,7 +1116,7 @@ function optionSelected(answer) {
 
 The complete code the `optionSelected()` is as follows:
 
-```
+```javascript
 //if user clicked on option
 function optionSelected(answer) {
   clearInterval(counter); //clear counter
@@ -1159,17 +1157,17 @@ function optionSelected(answer) {
 
 First, we need to remove the `info_box` and `quiz_box` since the elements are being placed on top of the other. After this, we can apply the `activeResult` class to show the `result_box`.
 
-```
+```javascript
 function showResult() {
   info_box.classList.remove("activeInfo"); //hide info box
   quiz_box.classList.remove("activeQuiz"); //hide quiz box
   result_box.classList.add("activeResult"); //show result box
-};
+}
 ```
 
-Second, we will get the <div> created in the HTML DOM for the score text so that we can change the innerHTML property to show a message with the score. The message displayed will change based on if the user got more than 3, more than 1, or 0 correct. The `userScore` holds the number of questions users answered correctly and was updated each time the `optionSelected()` method was called.
+Second, we will get the \<div> created in the HTML DOM for the score text so that we can change the innerHTML property to show a message with the score. The message displayed will change based on if the user got more than 3, more than 1, or 0 correct. The `userScore` holds the number of questions users answered correctly and was updated each time the `optionSelected()` method was called.
 
-```
+```javascript
 // display for result box based on user performance
 function showResult() {
   info_box.classList.remove("activeInfo"); //hide info box
@@ -1214,18 +1212,18 @@ Note: `setInterval` and `clearInterval` are global functions used in JavaScript 
 
 We set our counter variable to the output of the `setInterval` function that takes the timer the function we will define below and 1000 milliseconds.
 
-```
+```javascript
 // control the timer and actions associated to it
 function startTimer(time) {
   counter = setInterval(timer, 1000);
-};
+}
 ```
 
 The `timeCount` variable will display what ever the time is and then `time` is decremented by 1.
 
 If our time value is a single digit, we will add a zero in front of it in the `timeCount` variable.
 
-```
+```javascript
 // control the timer and actions associated to it
 function startTimer(time) {
   //...above code
@@ -1239,40 +1237,40 @@ function startTimer(time) {
       timeCount.textContent = "0" + addZero; //add a 0 before time value
     }
   }
-};
+}
 ```
 
 If our time has run out (time < 0>), the counter is cleared out, the text that shows the time changes from "Time Left" to "Time Off" and the correct answer is shown using similar code as in the `optionSelected()` function. We will also disable the ability to click all of the option buttons.
 
-```
+```javascript
 function timer() {
-   //... above code
+  //... above code
 
-if (time < 0) {
-      //if timer is less than 0
-      clearInterval(counter); //clear counter
-      timeText.textContent = "Time Off"; //change the time text to time off
-      const allOptions = option_list.children.length; //get all option items
-      let correcAns = questions[que_count].answer; //get correct answer from array
-      for (i = 0; i < allOptions; i++) {
-        if (option_list.children[i].textContent == correcAns) {
-          //if there is an option which is matched to an array answer
-          option_list.children[i].setAttribute("class", "option correct"); //add green color to matched option
-          option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //add tick icon to matched option
-          console.log("Time Off: Auto selected correct answer.");
-        }
+  if (time < 0) {
+    //if timer is less than 0
+    clearInterval(counter); //clear counter
+    timeText.textContent = "Time Off"; //change the time text to time off
+    const allOptions = option_list.children.length; //get all option items
+    let correcAns = questions[que_count].answer; //get correct answer from array
+    for (i = 0; i < allOptions; i++) {
+      if (option_list.children[i].textContent == correcAns) {
+        //if there is an option which is matched to an array answer
+        option_list.children[i].setAttribute("class", "option correct"); //add green color to matched option
+        option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //add tick icon to matched option
+        console.log("Time Off: Auto selected correct answer.");
       }
-      for (i = 0; i < allOptions; i++) {
-        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-      }
-      next_btn.classList.add("show"); //show the next button if user selected any option
     }
-};
+    for (i = 0; i < allOptions; i++) {
+      option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+    }
+    next_btn.classList.add("show"); //show the next button if user selected any option
+  }
+}
 ```
 
 Complete code for the `startTimer()` function:
 
-```
+```javascript
 // control the timer and actions associated to it
 function startTimer(time) {
   counter = setInterval(timer, 1000);
@@ -1311,9 +1309,9 @@ function startTimer(time) {
 
 First, the `counterLine` is initialized using the `setInterval` method again as takes the timer and 29 milliseconds as an argument
 
-Second, a `timer()` function is created that increments the time by 1 and proportionaly sets the width of the `counterLine` by the `time` value in pixels to show the growth. However, if the time has increased more than the size of the `quiz_box` container as indicated in the CSS file (set to width: 550), clear the `coutnerLine` so that it does not expand beyond the size of the <div>.
+Second, a `timer()` function is created that increments the time by 1 and proportionaly sets the width of the `counterLine` by the `time` value in pixels to show the growth. However, if the time has increased more than the size of the `quiz_box` container as indicated in the CSS file (set to width: 550), clear the `coutnerLine` so that it does not expand beyond the size of the \<div>.
 
-```
+```javascript
 // Shows a progress bar mirroring timer value left
 function startTimerLine(time) {
   counterLine = setInterval(timer, 29);
@@ -1330,9 +1328,9 @@ function startTimerLine(time) {
 
 ##### 6. Function to get the question's position in relation to the total amount of questions
 
-We wanted to show something along the lines of "Question X of Y" on each of the `quiz_box` divs. To do this dynamically, we will pass a value, in this case of `que_numb` variable that we initialized to 1 in the beginning, and use a <span> tag to format the string into the format "X of Y Questions."
+We wanted to show something along the lines of "Question X of Y" on each of the `quiz_box` divs. To do this dynamically, we will pass a value, in this case of `que_numb` variable that we initialized to 1 in the beginning, and use a \<span> tag to format the string into the format "X of Y Questions."
 
-```
+```javascript
 function queCounter(index) {
   //creating a new span tag and passing the question number and total question
   let totalQueCounTag =
