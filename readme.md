@@ -159,7 +159,7 @@ This completes the HTML file.
 
 1. Import fonts to use throughout the entire interface.
 
-```
+```scss
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 ```
 
